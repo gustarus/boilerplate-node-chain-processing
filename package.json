@@ -1,5 +1,5 @@
 {
-  "name": "task-gifs-to-vk-crossposting",
+  "name": "boilerplate-node-chain-processing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,7 +16,7 @@
     "lodash.merge": "4.6.0",
     "path": "0.12.7",
     "request-promise": "4.2.2",
-    "restler": "^3.4.0",
+    "restler": "3.4.0",
     "yargs": "7.0.2"
   }
 }
