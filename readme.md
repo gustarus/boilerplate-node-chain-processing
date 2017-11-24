@@ -1,4 +1,4 @@
-## Node chain processor
+## Node chain processing boilerplate
 Make four steps to get your own chain processor:
 1. Clone this project or download zip archive.
 2. Step into project and run `yarn install` to install dependencies.
@@ -52,7 +52,8 @@ TFS7BVUoaHAC, 8U4WB-sU_nkC, Z_4m0FbGbxcC, ...
 
 ## Using
 ### Using chain parts
-```./chain/0.js js
+```js
+// ./chain/0.js
 module.exports = {
   messageBefore: 'This message will be shown before execution of this step.',
   messageAfter: 'This message will be shown after execution of this step.',
@@ -66,7 +67,8 @@ module.exports = {
 
 ### Using console params
 In the chain part:
-```./chain/0.js js
+```js
+// ./chain/0.js
 const {params} = require('./../process');
 console.log(params.param1);
 ```
@@ -77,7 +79,8 @@ yarn start -- --param1=value1
 ```
 
 ### Using components
-```./config.js js
+```js
+// ./config.js
 const Component = require('./../components/component');
 module.exports = {
   components: {
@@ -88,13 +91,15 @@ module.exports = {
 };
 ```
     
-```./chain/0.js js
+```js
+// ./chain/0.js
 const {component} = require('./../process');
 component.method();
 ```
 
 ### Using directories
-```./config.js js
+```js
+// ./config.js
 const Component = require('./../components/component');
 module.exports = {
   paths: {
@@ -104,7 +109,8 @@ module.exports = {
 };
 ```
     
-```./chain/0.js js
+```js
+// ./chain/0.js
 const {pathToRuntimeFile, pathToRootFile} = require('./../process');
 console.log(pathToRuntimeFile); // __dirname + '/runtime/data.json' 
 console.log(pathToRootFile); // __dirname + '/package.json'
@@ -114,7 +120,8 @@ console.log(pathToRootFile); // __dirname + '/package.json'
 There are following helpers exists in the folder `./helpers`:
 
 #### getDownloadPromise
-```./chain/0.js
+```js
+// ./chain/0.js
 const {getDownloadPromise} = require('./../helpers');
 
 module.exports = {
@@ -127,7 +134,8 @@ module.exports = {
 ```
 
 #### getUploadPromise
-```./chain/0.js
+```js
+// ./chain/0.js
 const {getReadFilePromise} = require('./../helpers');
 
 module.exports = {
@@ -141,7 +149,8 @@ module.exports = {
 ```
 
 #### getWriteFilePromise
-```./chain/0.js
+```js
+// ./chain/0.js
 const {getWriteFilePromise} = require('./../helpers');
 
 module.exports = {
@@ -154,7 +163,8 @@ module.exports = {
 ```
 
 #### getReadFilePromise
-```./chain/0.js
+```js
+// ./chain/0.js
 const {getReadFilePromise} = require('./../helpers');
 
 module.exports = {
@@ -168,7 +178,8 @@ module.exports = {
 ```
 
 #### getWriteJsonFilePromise
-```./chain/0.js
+```js
+// ./chain/0.js
 const {getWriteJsonFilePromise} = require('./../helpers');
 
 module.exports = {
@@ -181,7 +192,8 @@ module.exports = {
 ```
 
 #### getReadJsonFilePromise
-```./chain/0.js
+```js
+// ./chain/0.js
 const {getReadJsonFilePromise} = require('./../helpers');
 
 module.exports = {
